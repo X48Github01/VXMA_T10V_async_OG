@@ -1,0 +1,11 @@
+numpy
+pandas
+pandas-ta
+ccxt
+line_notify
+tabulate
+schedule
+mplfinance
+backtesting
+functools
+dash
