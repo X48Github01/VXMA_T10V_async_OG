@@ -75,24 +75,35 @@ else:
     print(f'Margin Allow : {max_margin}$')
 
 def candle(df,symbol,tf):
-    data = df.tail(60)
+    data = df.tail(1000)
     rcs = {"axes.labelcolor":"none",
             "axes.spines.left": False,
             "axes.spines.right": False,
             "axes.axisbelow": False,
             "axes.grid": True,
             "grid.linestyle": ":",
-            "axes.titlesize": "xx-large",
-            "axes.titleweight": "bold"}
+            "figure.titlesize": "xx-large",
+            "figure.titleweight": "bold",
+            "figure.frameon": False,
+            "figure.subplot.left":  0.0,
+            "figure.subplot.right":  0.01,
+            "figure.subplot.bottom": 0.0,
+            "figure.subplot.top":    0.01,
+            "figure.subplot.wspace": 0.01,
+            "figure.subplot.hspace": 0.01,
+            "figure.constrained_layout.use": True            
+            }
     titles = f'{symbol}_{tf}'
-    color = mplf.make_marketcolors(up='white',down='black',wick='black',edge='black')   
-    s = mplf.make_mpf_style(rc=rcs,y_on_right=True,marketcolors=color,figcolor='lime',gridaxis='horizontal')
+    color = mplf.make_marketcolors(up='white',down='blue',wick='blue',edge='blue')   
+    s = mplf.make_mpf_style(rc=rcs,marketcolors=color,figcolor='white',gridaxis='horizontal', y_on_right=True)
     try:
-        vxma = mplf.make_addplot(data.vxma,secondary_y=False,color='blue',linewidths=0.2) 
-        mplf.plot(data,type='candle',title=titles,addplot=vxma, style=s,volume=True,savefig='candle.png',tight_layout=True,figratio=(9,9),datetime_format='%y/%b/%d %H:%M', xrotation=20)
+        vxma = mplf.make_addplot(data.vxma,secondary_y=False,color='red',width=1.5) #,savefig='candle.png'
+        bPrice = mplf.make_addplot(data.buyPrice,secondary_y=False,color='green',type='scatter', marker='^', markersize=100) #,savefig='candle.png'
+        sPrice = mplf.make_addplot(data.sellPrice,secondary_y=False,color='red',type='scatter', marker='v', markersize=100)
+        mplf.plot(data,type='candle',title=titles,addplot=[vxma,bPrice,sPrice], style=s, volume=True, tight_layout=True, figratio=(10,8),datetime_format='%y/%b/%d %H:%M', xrotation=20, volume_panel=1, volume_yscale="linear")
     except AttributeError as e:
         print(f'{e}')
-        mplf.plot(data,type='candle',title=titles,addplot=vxma, style=s,volume=True,savefig='candle.png',tight_layout=True,figratio=(9,9),datetime_format='%y/%b/%d %H:%M', xrotation=20)
+        mplf.plot(data,type='candle',title=titles, style=s, volume=True, tight_layout=True, figratio=(10,8),datetime_format='%y/%b/%d %H:%M', xrotation=20, volume_panel=1, volume_yscale="linear")
     notify.send(f'info : {titles}',image_path=('./candle.png'))
     return 
 
