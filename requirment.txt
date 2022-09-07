@@ -7,5 +7,3 @@ tabulate
 schedule
 mplfinance
 backtesting
-functools
-dash
