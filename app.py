@@ -909,7 +909,6 @@ async def main():
     global aldynoti, aldynotiday
     seconds = time.time()
     local_time = time.ctime(seconds)
-    print(str(local_time[14:-9]))
     if str(local_time[14:-9]) == "1":
         aldynoti = False
         aldynotiday = False
