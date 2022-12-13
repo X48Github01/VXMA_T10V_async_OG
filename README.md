@@ -1,5 +1,6 @@
 # VXMA_T10V_async
 VXMA_Bot_binance top 10 volume async support
+web app setting bot-trading version beta
 #VXMA BOT TRADING STRATEGY BY VAZ.
 ```
 What's this version do?
@@ -26,51 +27,25 @@ What's this version do?
 |-  Please use with your own risk.
 ```
 ##สามารถตั้งค่าได้ดังต่อไปนี้นี้ \ this is this config.
-```
-[KEY]
-time_delay = 60
-API_KEY = Binance_api_key
-API_SECRET = Binance_secret_key
-LINE_TOKEN = Line_Notiytoken
-[STAT]
-OPEN_LONG = True เปิด False ปิด
-OPEN_SHORT = True เปิด False ปิด
-USE_TP = True  เปิด False ปิด
-USE_SL = True เปิด False ปิด
-Tailing_SL = True  เปิด False ปิด
-Free_Balance = $100 จำนวนเงินที่บอทสามารถใช้ได้
-MIN_BALANCE = $50 บอทจะยกเลิกการเข้า order หากเงินต่ำกว่า MIN_BALANCE 
-LOST_PER_TARDE = 0.5 ถ้าอยากใช้ % ให้ใช้ตัวเลขธรรมดา 	 LOST_PER_TARDE = 5 คือจำนวนเงินที่จะเสีย หากไปถึงจุด SL
-MAX_Margin_USE_Per_Trade = $5 จำนวน Margin สูงสุดต่อไม้ ที่บอทจะเปิดได้
-RiskReward_TP1 = 3 RiskReward คำนวนระยะห่างจากจุด SL อัตโนมัด
-RiskReward_TP2 = 4.5
-Percent_TP1 = 50 จำนวน % ที่จะออก TP
-Percent_TP2 = 50
-Pivot_lookback = 50 ระยะแท่งเทียนการตรวจหา swinghigh low ย้อนหลังเพื่อหาจุด SL
-[BOT]
-SYMBOL_NAME = BTC,XMR คู่เทรดที่สนใจ
-Blacklist = ADA,1000SHIB,LUNA คู่ที่เกลียด
-LEVERAGE = 125 lerverage สูงสุดที่บอทจะใช้
-TF = 6h timeframe ที่จะเล่น
-[TA]
-ATR_Period = 12
-ATR_Mutiply = 1.6
-RSI_Period = 25
-EMA_Fast = 30
-SUBHAG_LINEAR = 30
-SMOOTH = 30
-Andean_Oscillator = 30
-[weigh100]
-RSI_W = 20 กำหนดน้ำหนักในการประเมินเทรน
-ADX_W = 20 โดยบวกลบกันให้ได้ 100
-VXMA_W = 40 ไม่มีผลกับการเข้า order
-MACD_W = 10 เพราะสัญญาณซื้อขายจะมาจาก VXMA เท่านั้น
-SMA200_W = 10
-```
-##LOST_PER_TARDE  
-```
-ถ้าอยากใช้ % ให้ใช้ตัวเลขธรรมดา 	 LOST_PER_TARDE = 5
-ถ้าอยากใช้ $ ให้ใช้ $ นำหน้า		LOST_PER_TARDE = $10
-```
+
+
+### default 
+User = 'vxma'
+password = 'vxmaBot'
+
+
+![image](https://user-images.githubusercontent.com/8637706/189531967-c03dec80-60aa-4b5a-9c95-7b26581710aa.png)
+
 ###Donate XMR : 87tT3DZqi4mhGuJjEp3Yebi1Wa13Ne6J7RGi9QxU21FkcGGNtFHkfdyLjaPLRv8T2CMrz264iPYQ2dCsJs2MGJ27GnoJFbm
+
+### default 
+User = 'vxma'
+password = 'vxmaBot'
+
+
+![image](https://user-images.githubusercontent.com/8637706/189531967-c03dec80-60aa-4b5a-9c95-7b26581710aa.png)
+
+
+[![Tradingview_VXMA](https://user-images.githubusercontent.com/8637706/196947394-d71c8ef6-9ab7-451a-b6bc-55a642c9e845.png)](https://www.tradingview.com/script/m54nptt2-VXMA-Bot)
+
 

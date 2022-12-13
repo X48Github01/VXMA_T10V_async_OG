@@ -1,0 +1,14 @@
+numpy
+pandas
+ccxt
+line_notify
+tabulate
+mplfinance
+backtesting
+dash
+dash[celery]
+plotly
+dash_bootstrap_components
+bcrypt
+dash_mantine_components
+
