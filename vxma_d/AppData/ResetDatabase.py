@@ -28,7 +28,7 @@ def cooking(id, pwd):
 
 dropuser = "DROP TABLE user"
 dropkey = "DROP TABLE key"
-dropbot = "DROP TABLE Bot"
+# dropbot = "DROP TABLE Bot"
 
 # 2
 sql_create_users = """CREATE TABLE IF NOT EXISTS user (
@@ -121,7 +121,7 @@ def dropT():
     try:
         cur.execute(dropuser)
         cur.execute(dropkey)
-        cur.execute(dropbot)
+        # cur.execute(dropbot)
         con.commit()
         print("success : Drop")
     except sqlite3.Error as e:
