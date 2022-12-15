@@ -137,13 +137,13 @@ async def setleverage(symbol, lev, exchange):
 
         logging.info(e)
         exchange = await connect()
-    lever = await exchange.fetch_positions_risk([symbol])
-    for x in range(len(lever)):
-        if (lever[x]["symbol"]) == symbol:
-            lev = round(lever[x]["leverage"], 0)
-            print(lev)
-            await exchange.set_leverage(int(lev), symbol)
-            break
+        lever = await exchange.fetch_positions_risk([symbol])
+        for x in range(len(lever)):
+            if (lever[x]["symbol"]) == symbol:
+                lev = round(lever[x]["leverage"], 0)
+                print(lev)
+                await exchange.set_leverage(int(lev), symbol)
+                break
     return round(int(lev), 0)
 
 
