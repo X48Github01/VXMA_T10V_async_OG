@@ -163,14 +163,14 @@ class AppConfig:
 
     def __init__(self):
         config = config_setting()
-        max_margin = "$10"
+        risk = "$10"
         MIN_BALANCE = "$50"
         if not config.empty:
-            max_margin = str(config["freeB"][0])
-            MIN_BALANCE = str(config["minB"][0])
-            API_KEY = str(config["apikey"][0])
-            API_SECRET = str(config["apisec"][0])
-            LINE_TOKEN = str(config["notify"][0])
+            risk = str(config["RISK"][0])
+            MIN_BALANCE = str(config["MINBALANCE"][0])
+            API_KEY = str(config["API_KEY"][0])
+            API_SECRET = str(config["API_SEC"][0])
+            LINE_TOKEN = str(config["LINE_TK"][0])
         else:
             API_KEY = ""
             API_SECRET = ""
@@ -183,10 +183,10 @@ class AppConfig:
             self.min_balance = float(MIN_BALANCE[1 : len(MIN_BALANCE)])
         else:
             self.min_balance = float(MIN_BALANCE)
-        if max_margin[0] == "$":
-            self.max_margin = float(max_margin[1 : len(max_margin)])
+        if risk[0] == "$":
+            self.risk = float(risk[1 : len(risk)])
         else:
-            self.max_margin = float(max_margin)
+            self.risk = float(risk)
         self.notify_token = LINE_TOKEN
         self.BNBCZ = {
             "apiKey": API_KEY,

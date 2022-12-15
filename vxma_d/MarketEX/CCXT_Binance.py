@@ -762,7 +762,9 @@ async def feed(df, risk_manage):
     margin = 0.0
     netunpl = 0.0
     config = AppConfig()
-    max_margin = config.max_margin
+    risk = config.risk
+    risk_manage["risk_size"] = risk
+    max_margin = risk * 10
     min_balance = config.min_balance
     for i in status.index:
         margin += float(status["initialMargin"][i])
